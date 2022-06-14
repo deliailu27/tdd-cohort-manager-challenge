@@ -32,7 +32,11 @@ class cohortList {
     }
 
     removeCohort (removeCohort) {
-        for 
+        const cohorttoremove = this.list.find(item => item[cohortName]===removeCohorts)
+        if (!cohorttoremove){ 
+            return 'cohort not found'
+        }
+        else this.list.splice(this.list.indexOf(removeCohort),1)
     }
 
     addStudenttoCohort (cohortName, ID, firstName, lastName, github, email){
