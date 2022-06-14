@@ -32,11 +32,12 @@ class cohortList {
     }
 
     removeCohort (removeCohort) {
-        const cohorttoremove = this.list.find(item => item[cohortName]===removeCohorts)
-        if (!cohorttoremove){ 
-            return 'cohort not found'
-        }
-        else this.list.splice(this.list.indexOf(removeCohort),1)
+        //const cohorttoremove = this.list.find(item => item[cohortName]===removeCohorts)
+       // if (!cohorttoremove){ 
+            //return 'cohort not found'
+        //}
+        this.list.splice(this.list.indexOf(removeCohort),1)
+        return this.list
     }
 
     addStudenttoCohort (cohortName, ID, firstName, lastName, github, email){
@@ -44,6 +45,9 @@ class cohortList {
         if (this.list[i].cohortName === cohortName) {
             const toCohort = this.list[i]
             toCohort.addStudent(ID, firstName, lastName, github, email)
+            toCohort.students = toCohort.students.filter(function(element){
+                return element !==undefined;
+            })
             return toCohort.students
         }
         else return 'cohort not found'

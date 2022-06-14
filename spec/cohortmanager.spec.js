@@ -52,13 +52,16 @@ describe('cohorts',()=>{
         list.addCohort('cohort 1')
 
         const result=list.addStudenttoCohort('cohort 1',1,'Delia','Liu','deliagithub','delia@email.com')
-        const expected = {
-            'studentID':1,
-            'first name':'Delia',
-            'last name':'Liu',
-            'github username':"deliagithub",
-            'email':'delia@email.com'
-        }
+        const expected = [{ 'studentID': 1, 'first name': 'Delia', 'last name': 'Liu', 'github username': 'deliagithub', 'email': 'delia@email.com' }]
+        expect(result).toEqual(expected)
+    })
+
+    it('remove cohort',()=>{
+        list.addCohort('cohort 1')
+
+        const result=list.removeCohort('cohort 1')
+        const expected =[]
+
         expect(result).toEqual(expected)
     })
 
