@@ -83,6 +83,15 @@ describe('cohorts',()=>{
         expect(result).toEqual(expected)
     })
 
+    it ('remove student not found',()=>{
+        list.addCohort('cohort 1')
+        list.addStudenttoCohort('cohort 1',2,'John','Doe','johngithub','john@email.com')
+        const expected ='student not found'
+        const result=list.removeStudent('cohort 1','Delia')
+
+        expect(result).toEqual(expected)
+    })
+
     
 
     

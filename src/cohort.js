@@ -29,9 +29,6 @@ class Cohort {
 }
 
 
-const test = new Cohort
-test.addStudent(1,'1','1','1','1')
-console.log(test.students)
 
 
 module.exports = Cohort

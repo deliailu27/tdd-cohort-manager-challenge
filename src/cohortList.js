@@ -61,20 +61,36 @@ class cohortList {
         if (!studentCohort){
             return 'cohort not found'
         }
-        studentCohort.students.splice(studentCohort.students.indexOf(studentName),1)
 
+        const studenttoRemove = studentCohort.students.find(newStudent=>newStudent['first name']===studentName)
+
+       
+        if (!studenttoRemove){
+            return 'student not found'
+        }
+
+        console.log(studentCohort)
+        
+        studentCohort.students.splice(studentCohort.students.indexOf(studentName),1)
         return studentCohort.students
+        
     }
 
     //searchStudentbyID()
 
-    
+  
 
 }
 
 const list= new cohortList
 list.addCohort('test')
+list.addStudenttoCohort('test',1,'test','test','test','test')
+
+list.removeStudent('cohort 1','null')
+
 console.log(list)
+
+
 
 
 
