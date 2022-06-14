@@ -76,19 +76,19 @@ class cohortList {
         
     }
 
-    //searchStudentbyID()
+    searchStudentbyID(studentID) {
+        for (let i = 0; i < list.length; i++) {
+            const IDstudent = this.list.newCohort[i].students.find(newStudent=>newStudent['studentID']===studentID)
+            return IDstudent
+            
+        }
+    }
 
   
 
 }
 
-const list= new cohortList
-list.addCohort('test')
-list.addStudenttoCohort('test',1,'test','test','test','test')
 
-list.removeStudent('cohort 1','null')
-
-console.log(list)
 
 
 
