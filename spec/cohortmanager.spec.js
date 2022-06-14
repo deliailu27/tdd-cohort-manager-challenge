@@ -65,5 +65,25 @@ describe('cohorts',()=>{
         expect(result).toEqual(expected)
     })
 
+    it('remove student cohort not found',()=>{
+        list.addCohort('cohort 1')
+
+        const result=list.removeStudent ('cohort 5','Delia')
+        const expected ='cohort not found'
+
+        expect(result).toEqual(expected)
+    })
+
+    it('remove student by name',()=>{
+        list.addCohort('cohort 1')
+        list.addStudenttoCohort('cohort 1',1,'Delia','Liu','deliagithub','delia@email.com')
+        const expected=[]
+        const result = list.removeStudent('cohort 1','Delia')
+
+        expect(result).toEqual(expected)
+    })
+
+    
+
     
 })

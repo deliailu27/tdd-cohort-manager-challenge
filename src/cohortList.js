@@ -32,10 +32,10 @@ class cohortList {
     }
 
     removeCohort (removeCohort) {
-        //const cohorttoremove = this.list.find(item => item[cohortName]===removeCohorts)
-       // if (!cohorttoremove){ 
-            //return 'cohort not found'
-        //}
+        const cohorttoremove = this.list.find(Cohort => Cohort.cohortName===removeCohort)
+        if (!cohorttoremove){ 
+            return 'cohort not found'
+        }
         this.list.splice(this.list.indexOf(removeCohort),1)
         return this.list
     }
@@ -56,7 +56,17 @@ class cohortList {
 
     }
 
-    searchStudentbyName
+    removeStudent (cohort,studentName){
+        const studentCohort = this.list.find(Cohort => Cohort.cohortName===cohort)
+        if (!studentCohort){
+            return 'cohort not found'
+        }
+        studentCohort.students.splice(studentCohort.students.indexOf(studentName),1)
+
+        return studentCohort.students
+    }
+
+    //searchStudentbyID()
 
     
 
